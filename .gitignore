@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+
+.env
+
+models/
+checkpoints/
+
+*.pt
+*.bin
+*.safetensors
+
+logs/
+*.log
+
+results/

@@ -1,0 +1,12 @@
+torch
+transformers
+accelerate
+peft
+sentence-transformers
+numpy
+pandas
+scikit-learn
+tqdm
+jsonlines
+openai
+requests

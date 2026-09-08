@@ -1,0 +1,12 @@
+model:
+  name: Qwen1.5-7B-Chat
+
+evaluation:
+  seed: 42
+
+retrieval:
+  top_k: 5
+
+api:
+  provider: DeepSeek
+  key_from_environment: true
