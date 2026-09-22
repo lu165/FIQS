@@ -1,0 +1,8 @@
+Model revision hash was not available from the original checkpoint metadata.
+
+Model identity is documented in:
+- reproducibility/model_manifests/
+- reproducibility/environment/base_model_config.json
+
+Runtime environment information is documented in:
+- reproducibility/environment/lib_versions.txt

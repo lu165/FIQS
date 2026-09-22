@@ -1,0 +1,23 @@
+Working directory:
+/data/nefu/小论文修改实验
+
+Command:
+nohup python -u eval_seed123_fets_full.py > logs/seed123_fets_full.log 2>&1 &
+
+Model:
+Qwen1.5-7B-Chat + Stage-2 LoRA seed123
+
+LoRA directory:
+/data/nefu/毕业论文实验/checkpoints/Qwen1.5-7B-Chat_lora_mixedfix_seed123
+
+FETS:
+510林业专业测试集.jsonl
+
+Output:
+results/seed123_fets_predictions.jsonl
+
+Summary:
+results/seed123_fets_generation_summary.json
+
+Log:
+logs/seed123_fets_full.log

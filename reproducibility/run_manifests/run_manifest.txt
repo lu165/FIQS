@@ -1,0 +1,40 @@
+Experiment: corrected mixed-data LoRA rerun
+Base model: Qwen1.5-7B-Chat
+
+Training data:
+Forestry total = 115,375
+General total = 49,446
+Forestry:General = 70:30
+
+Train = 148,338
+Validation = 8,241
+Test = 8,242
+
+LoRA:
+r = 64
+alpha = 16
+dropout = 0.05
+target_modules = q_proj, v_proj
+
+Training:
+epochs = 2
+per_device_train_batch_size = 4
+gradient_accumulation_steps = 1
+effective batch size = 4
+learning_rate = 2e-4
+scheduler = cosine
+warmup_ratio = 0.05
+weight_decay = 0.0
+precision = FP16
+max_seq_len = 2048
+seed = 42
+data_seed = 42
+
+Checkpoint selection:
+metric = eval_loss
+greater_is_better = False
+load_best_model_at_end = True
+
+Expected optimizer updates:
+37,085 / epoch
+74,170 total

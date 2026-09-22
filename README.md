@@ -51,11 +51,29 @@ python code/experiments/run_without_specialized.py
 
 This repository releases the implementation code, configuration files,
 and experiment scripts. Due to licensing restrictions and third-party
-data policies, the complete datasets used in this study are not
-redistributed during the revision stage. Additional materials may be
-released after acceptance and publication, subject to applicable
-licensing conditions.
+data policies, some benchmark datasets and third-party resources are
+not redistributed in this repository. The dataset organization and
+evaluation protocols are documented in `data/DATASET_PROTOCOL.md`.
+Publicly available benchmark resources can be reconstructed following
+their original distribution protocols. Experiments requiring restricted
+datasets should contact the corresponding author for lawful access.
 
 ## License
 
 MIT License
+
+## Reproducibility
+
+To facilitate reproduction and transparent evaluation, this repository provides additional reproducibility materials.
+
+The `reproducibility/` directory contains:
+
+- model identification and checksum information;
+- software environment records;
+- experiment commands;
+- run manifests.
+
+The `data/DATASET_PROTOCOL.md` file documents dataset organization, evaluation protocols, and restricted dataset handling.
+
+Prompt templates are implemented directly in the released experiment scripts.
+
