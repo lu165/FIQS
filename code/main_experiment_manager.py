@@ -16,7 +16,7 @@ import json
 class FIQSEexperimentManager:
     """FIQS实验管理器"""
     
-    def __init__(self, base_dir: str = "/data/nefu/毕业论文实验"):
+    def __init__(self, base_dir: str = "."):
         self.base_dir = Path(base_dir)
         self.results_dir = self.base_dir / "experiments" / "results"
         self.code_dir = self.base_dir / "code"

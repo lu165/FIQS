@@ -28,13 +28,13 @@ from collections import defaultdict
 import numpy as np
 
 # 添加项目路径
-sys.path.insert(0, '/data/nefu/毕业论文实验')
+sys.path.insert(0, '.')
 
 # 导入LLM增强评估模块
 from metrics_llm_enhanced import LLMEnhancedMetricsCalculator
 
 # 配置日志
-log_dir = "/data/nefu/毕业论文实验/experiments/logs"
+log_dir = "./experiments/logs"
 os.makedirs(log_dir, exist_ok=True)
 
 logging.basicConfig(
@@ -53,15 +53,15 @@ class E3LLMEnhancedExperiment:
     
     def __init__(self):
         # 路径配置
-        self.base_model_path = "/data/nefu/homee/Qwen/Qwen1.5-7B-Chat"
-        self.lora_path = "/data/nefu/毕业论文实验/checkpoints/Qwen1.5-7B-Chat_lora/checkpoint-74170"
-        self.test_file = "/data/nefu/毕业论文实验/experiments/results/test_all_tasks.jsonl"
+        self.base_model_path = "./models/Qwen1.5-7B-Chat"
+        self.lora_path = "./checkpoints/Qwen1.5-7B-Chat_lora/checkpoint-74170"
+        self.test_file = "./experiments/results/test_all_tasks.jsonl"
         
         # DeepSeek API配置
         self.deepseek_api_key = os.getenv("DEEPSEEK_API_KEY")
         
         # 输出配置
-        self.output_dir = "/data/nefu/毕业论文实验/experiments/results/main"
+        self.output_dir = "./experiments/results/main"
         os.makedirs(self.output_dir, exist_ok=True)
         
         self.output_file = os.path.join(self.output_dir, "E3_no_specialized_module_results.json")

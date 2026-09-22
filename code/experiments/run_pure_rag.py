@@ -35,13 +35,13 @@ from collections import defaultdict
 import numpy as np
 
 # 添加项目路径
-sys.path.insert(0, '/data/nefu/毕业论文实验')
+sys.path.insert(0, '.')
 
 # 导入评估模块
 from metrics_llm_enhanced import LLMEnhancedMetricsCalculator
 
 # 配置日志
-log_dir = "/data/nefu/毕业论文实验/experiments/logs"
+log_dir = "./experiments/logs"
 os.makedirs(log_dir, exist_ok=True)
 
 logging.basicConfig(
@@ -60,19 +60,19 @@ class E4PureRAGExperiment:
     
     def __init__(self):
         # ✅ 使用基座模型而非微调模型
-        self.base_model_path = "/data/nefu/homee/Qwen/Qwen1.5-7B-Chat"  # 不加载LoRA
+        self.base_model_path = "./models/Qwen1.5-7B-Chat"  # 不加载LoRA
         self.lora_path = None  # E4不使用微调
         
-        self.test_file = "/data/nefu/毕业论文实验/experiments/results/test_all_tasks.jsonl"
+        self.test_file = "./experiments/results/test_all_tasks.jsonl"
         
         # DeepSeek API配置
         self.deepseek_api_key = os.getenv("DEEPSEEK_API_KEY")
         
         # 知识库路径
-        self.knowledge_base_dir = "/data/nefu/毕业论文实验/knowledge_base"
+        self.knowledge_base_dir = "./knowledge_base"
         
         # 输出配置
-        self.output_dir = "/data/nefu/毕业论文实验/experiments/results/main"
+        self.output_dir = "./experiments/results/main"
         os.makedirs(self.output_dir, exist_ok=True)
         
         self.output_file = os.path.join(self.output_dir, "E4_pure_rag_results.json")

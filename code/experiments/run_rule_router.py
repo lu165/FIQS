@@ -24,7 +24,7 @@ from collections import defaultdict
 import numpy as np
 
 # 添加项目路径
-sys.path.insert(0, '/data/nefu/毕业论文实验')
+sys.path.insert(0, '.')
 
 # 导入LLM增强评估模块
 from metrics_llm_enhanced import LLMEnhancedMetricsCalculator
@@ -33,7 +33,7 @@ from metrics_llm_enhanced import LLMEnhancedMetricsCalculator
 from test_data_loader import TestDataLoader
 
 # 配置日志
-log_dir = "/data/nefu/毕业论文实验/experiments/logs"
+log_dir = "./experiments/logs"
 os.makedirs(log_dir, exist_ok=True)
 
 logging.basicConfig(
@@ -95,18 +95,18 @@ class FixedRuleRoutingExperiment:
     
     def __init__(self):
         # 路径配置
-        self.base_model_path = "/data/nefu/homee/Qwen/Qwen1.5-7B-Chat"
-        self.lora_path = "/data/nefu/毕业论文实验/checkpoints/Qwen1.5-7B-Chat_lora/checkpoint-74170"
+        self.base_model_path = "./models/Qwen1.5-7B-Chat"
+        self.lora_path = "./checkpoints/Qwen1.5-7B-Chat_lora/checkpoint-74170"
         
         # ✅ 修改：使用新的测试数据路径
-        self.biomass_test_file = "/data/nefu/homee/最新生物量测试集构建_v7_with_neg.json"
-        self.equation_db_path = "/data/nefu/homee/林业方程_标准化.json"
+        self.biomass_test_file = "./data/最新生物量测试集构建_v7_with_neg.json"
+        self.equation_db_path = "./data/林业方程_标准化.json"
         
         # DeepSeek API配置
         self.deepseek_api_key = os.getenv("DEEPSEEK_API_KEY")
         
         # 输出配置
-        self.output_dir = "/data/nefu/毕业论文实验/experiments/results/main"
+        self.output_dir = "./experiments/results/main"
         os.makedirs(self.output_dir, exist_ok=True)
         
         self.output_file = os.path.join(self.output_dir, "E2_fixed_rule_routing_results.json")
